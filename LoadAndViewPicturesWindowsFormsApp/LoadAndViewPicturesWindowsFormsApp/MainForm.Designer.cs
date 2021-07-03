@@ -31,7 +31,6 @@ namespace LoadAndViewPicturesWindowsFormsApp
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openButton = new System.Windows.Forms.Button();
@@ -52,35 +51,30 @@ namespace LoadAndViewPicturesWindowsFormsApp
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.открытьToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(48, 20);
             this.toolStripMenuItem1.Text = "Файл";
-            // 
-            // открытьToolStripMenuItem
-            // 
-            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.открытьToolStripMenuItem.Text = "Открыть";
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(242, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(415, 318);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // openButton
             // 
-            this.openButton.Location = new System.Drawing.Point(38, 117);
+            this.openButton.Location = new System.Drawing.Point(12, 99);
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(75, 23);
             this.openButton.TabIndex = 2;
@@ -111,7 +105,6 @@ namespace LoadAndViewPicturesWindowsFormsApp
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button openButton;
