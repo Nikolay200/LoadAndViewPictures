@@ -16,5 +16,24 @@ namespace LoadAndViewPicturesWindowsFormsApp
         {
             InitializeComponent();
         }
+
+        private void openButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Images Files(*.BMP; *.JPG; *.PNG | *.BMP; *.JPG; *.PNG)";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pictureBox1.Image = new Bitmap(openFileDialog.FileName);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Невозможно открыть выбранный файл.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+            }
+        }
     }
 }
