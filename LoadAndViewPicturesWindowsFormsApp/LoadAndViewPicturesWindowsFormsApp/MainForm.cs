@@ -9,12 +9,12 @@ namespace LoadAndViewPicturesWindowsFormsApp
         public MainForm()
         {
             InitializeComponent();
-        }
+        }        
 
-        private void openButton_Click(object sender, EventArgs e)
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Images Files(*.BMP; *.JPG; *.PNG | *.BMP; *.JPG; *.PNG)";
+            openFileDialog.Filter = "Images Files(*.BMP; *.JPG; *.PNG | *.BMP; *.JPG; *.PNG | All files(*.*) | *.*";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -24,17 +24,21 @@ namespace LoadAndViewPicturesWindowsFormsApp
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Невозможно открыть выбранный файл.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    throw;
+                    MessageBox.Show("Невозможно открыть выбранный файл.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);                    
                 }
             }
         }
 
-        private void ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Dispose();
+        }
+
+        private void выходToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Вы действительно хотите выйти?", "Выход", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            
-            if(result == DialogResult.OK)
+
+            if (result == DialogResult.Yes)
             {
                 Application.Exit();
             }
